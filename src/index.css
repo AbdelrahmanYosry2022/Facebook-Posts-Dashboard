@@ -1,0 +1,86 @@
+/* src/index.css - global styles for the app */
+:root{
+  --bg: #f6f8fb;
+  --card: #ffffff;
+  --muted: #6b7280;
+  --accent: #0b74de;
+  --glass: rgba(255,255,255,0.6);
+}
+
+*{box-sizing:border-box}
+html,body,#root{height:100%}
+body{
+  margin:0;
+  font-family: Inter, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  background: linear-gradient(180deg, #f7fbff 0%, var(--bg) 100%);
+  color:#111827;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  padding:24px;
+}
+
+/* metrics */
+.metrics-bar{display:flex;gap:10px;flex-wrap:wrap;margin:-4px 0 14px 0}
+.metric-chip{background:#fff;padding:6px 10px;border:1px solid #e5e7eb;border-radius:8px;font-size:12px;color:#374151;box-shadow:0 2px 4px rgba(0,0,0,0.04)}
+.metrics-input{width:56px;padding:4px 6px;border:1px solid #e5e7eb;border-radius:6px;font-size:11px}
+.btn.danger{background:#dc2626;color:#fff;border:0;box-shadow:0 6px 16px rgba(220,38,38,0.18)}
+.toast{position:fixed;bottom:22px;right:22px;background:#111827;color:#fff;padding:10px 16px;border-radius:10px;font-size:13px;box-shadow:0 8px 24px rgba(0,0,0,0.25);animation:fadeIn .25s ease}
+@keyframes fadeIn{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:translateY(0)}}
+/* pagination buttons share existing .btn styles */
+
+/* layout */
+.container{max-width:1100px;margin:0 auto}
+.header{display:flex;gap:18px;align-items:center;justify-content:space-between;margin-bottom:18px}
+.header h1{margin:0;font-size:20px}
+.subtitle{margin:0;color:var(--muted);font-size:13px}
+
+/* controls */
+.controls{display:flex;gap:12px;align-items:center}
+.btn{padding:8px 12px;border-radius:8px;border:1px solid #e5e7eb;background:#fff;cursor:pointer}
+.btn.primary{background:var(--accent);color:#fff;border:0;box-shadow:0 6px 16px rgba(11,116,222,0.12)}
+.btn:disabled{opacity:0.6;cursor:not-allowed}
+.small-input{width:70px;padding:6px;border-radius:6px;border:1px solid #e5e7eb;margin-left:6px}
+.auto-wrap{display:flex;gap:8px;align-items:center;background:#fff;padding:8px;border-radius:10px;border:1px solid #f0f3f7}
+.auto-label{display:flex;gap:8px;align-items:center;font-size:13px;color:var(--muted)}
+
+.summary{font-size:13px;color:var(--muted);margin-left:12px}
+
+/* spinner */
+.spinner{
+  width:18px;height:18px;border-radius:50%;
+  display:inline-block;border:2px solid rgba(255,255,255,0.3);
+  border-left-color:rgba(255,255,255,0.9);
+  animation:spin 0.9s linear infinite;
+}
+@keyframes spin{to{transform:rotate(360deg)}}
+
+/* grid of cards */
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:14px}
+.card{display:flex;gap:12px;background:var(--card);border-radius:12px;padding:12px;box-shadow:0 8px 24px rgba(15,23,42,0.03);align-items:flex-start}
+.media{width:140px;height:120px;border-radius:10px;overflow:hidden;background:#fafafa;display:flex;align-items:center;justify-content:center}
+.post-image{width:100%;height:100%;object-fit:cover;display:block}
+.no-image{font-size:12px;color:#9ca3af;padding:8px;text-align:center}
+
+/* card body */
+.card-body{flex:1;display:flex;flex-direction:column;gap:8px}
+.meta{display:flex;justify-content:space-between;align-items:center}
+.date{font-size:12px;color:var(--muted)}
+.total{font-weight:700;color:#111}
+.message{font-size:14px;color:#111;line-height:1.3;max-height:5.2em;overflow:hidden;text-overflow:ellipsis}
+.reactions{display:flex;gap:8px;flex-wrap:wrap;margin-top:6px}
+.reaction-chip{display:flex;align-items:center;gap:6px;padding:6px 8px;background:#f7f7f9;border-radius:999px;font-size:13px;color:#111}
+.reaction-chip .emoji{font-size:14px}
+.id{font-size:11px;color:#9ca3af}
+
+/* empty & error */
+.empty{padding:18px;background:#fff;border-radius:12px;border:1px dashed #e9eef6;color:var(--muted)}
+.error{background:#ffeef0;color:#7b1f2b;padding:10px;border-radius:8px}
+
+/* footer */
+.footer{margin-top:18px;color:var(--muted);font-size:13px}
+
+/* responsive tweaks */
+@media (max-width:720px){
+  .header{flex-direction:column;align-items:flex-start;gap:12px}
+  .media{width:120px;height:100px}
+}
