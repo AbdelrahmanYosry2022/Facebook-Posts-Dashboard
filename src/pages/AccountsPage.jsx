@@ -543,7 +543,14 @@ const AccountsPage = () => {
                   </div>
                   
                   <div className="table-cell actions">
-                    <button className="action-icon-btn" title="View Details">
+                    <button 
+                      className="action-icon-btn" 
+                      title="View Profile"
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        navigate(`/profile/${account.id}`);
+                      }}
+                    >
                       <Eye size={16} />
                     </button>
                     <button className="action-icon-btn" title="Edit Account">

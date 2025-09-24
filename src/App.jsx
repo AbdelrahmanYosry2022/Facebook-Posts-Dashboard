@@ -5,6 +5,7 @@ import HomePage from './pages/HomePage';
 import AccountsPage from './pages/AccountsPage';
 import PagesPage from './pages/PagesPage';
 import FacebookPostsPage from './pages/FacebookPostsPage';
+import ProfilePage from './pages/ProfilePage';
 import "./index.css";
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
           <Route path="/accounts" element={<AccountsPage />} />
           <Route path="/pages" element={<PagesPage />} />
           <Route path="/test" element={<FacebookPostsPage />} />
+          <Route path="/profile/:accountId" element={<ProfilePage />} />
         </Routes>
       </div>
     </Router>
